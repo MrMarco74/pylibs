@@ -1,0 +1,41 @@
+[project]
+name = "pylibs"
+version = "0.1.0"
+description = "Gemeinsame Python-Funktionsbibliothek fuer wiederkehrende Backend-Aufgaben (FTP, Ollama, Config, Logging)."
+requires-python = ">=3.10"
+readme = "README.md"
+license = "MIT"
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+ftp = ["paramiko>=3.0"]
+ollama = ["requests>=2.31"]
+comfyui = ["requests>=2.31"]
+logging = []
+redis = ["redis>=5.0"]
+http = ["requests>=2.31", "urllib3>=2.0"]
+netutil = []
+all = ["pylibs[ftp,ollama,comfyui,logging,redis,http]"]
+dev = [
+    "pytest>=8.0",
+    "pytest-mock",
+    "responses",
+    "pyftpdlib",
+    "fakeredis",
+    "pdoc>=14.0",
+    "ruff",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: needs a live Ollama-compatible proxy and FTP server for integration testing, not run by default",
+]

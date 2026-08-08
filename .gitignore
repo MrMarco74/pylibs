@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+.venv/
+venv/
+
+# Secrets - never commit these
+secrets.yaml
+*.secrets.yaml
+.env
+
+# Generated docs (rebuild via scripts/build_docs.sh)
+docs/html/*.html
+docs/html/**/*.html
