@@ -1,5 +1,7 @@
 # pylibs
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Language](https://img.shields.io/badge/language-Python-informational.svg) ![AI generated](https://img.shields.io/badge/AI-generated-8A2BE2.svg)
+
 A small collection of Python utilities for recurring backend tasks: FTP/SFTP
 upload, an Ollama client (with an automatic vision-call bypass for proxy
 setups that don't forward multimodal requests), config load/save, and
